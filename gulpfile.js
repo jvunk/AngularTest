@@ -20,18 +20,19 @@ gulp.task('minify.css', function (callback) {
 
     var filesToCombine = global.coreSassFiles;
     filesToCombine.push("app/**/*.scss");
-    filesToCombine.push("assets/scss/**/*.scss");     
+    filesToCombine.push("assets/scss/**/*.scss");
 
     minifySass(filesToCombine, global.paths.temp);
-    combineCss(tempCss, "app.min.css", global.paths.dist);    
+    combineCss(tempCss, "app.min.css", global.paths.dist);
 });
 
 //Minify my scss files
 gulp.task('clean.css', function () {
-
     //clear out the temp css files
     return del(tempCss);
 });
+
+
 
 //Core angular files to minfiy for the site
 global.coreAngularFiles = [
@@ -53,8 +54,18 @@ gulp.task('minify.js.angular', function () {
     minifyAngualrJS(filesToCombine, "app.min.js", global.paths.dist);
 });
 
+//Watch angular files
+gulp.task('watch.js.angular', function () {
+    return gulp.watch(['app/**/*.js'], ['minify.js.angular']);
+});
+
 //Minify my html files
-gulp.task('minify.html', function () {     
+gulp.task('minify.html', function () {
 
     minifyHtml("app/**/*.html", global.paths.dist);
+});
+
+//Watch html
+gulp.task('watch.html', function () {
+    return gulp.watch(['app/**/*.html'], ['minify.html']);
 });

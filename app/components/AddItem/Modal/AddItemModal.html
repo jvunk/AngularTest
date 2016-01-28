@@ -1,0 +1,38 @@
+﻿<md-dialog class="flex-50" ng-cloak>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <span flex>New Item</span>
+
+                <!--close form button-->
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <md-content class="layout-padding layout-column">
+                <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Name</label>
+                    <md-icon class="md-accent" style="padding-top:5px;">person</md-icon>
+                    <input ng-model="newItem.userName" type="text" />
+                </md-input-container>
+
+                <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>What do you want to say?</label>
+                    <md-icon class="md-accent" style="padding-top:5px;">description</md-icon>
+                    <textarea ng-model="newItem.text" type="text"></textarea>
+                </md-input-container>
+            </md-content>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+
+            <!--Save Button-->
+            <md-button type="button" class="md-button" ng-click="submit()">
+                Submit
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
