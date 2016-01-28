@@ -3,7 +3,7 @@
  * @author Jon Vunk
  * @since 12/18/2015
  */
-angular.module('app', ['siteGlobals'])
+angular.module('app', ['addItem', 'siteGlobals'])
 
 /**
  * This sets up one time configuartion options for the entire site. 
