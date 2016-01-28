@@ -52,3 +52,9 @@ gulp.task('minify.js.angular', function () {
 
     minifyAngualrJS(filesToCombine, "app.min.js", global.paths.dist);
 });
+
+//Minify my html files
+gulp.task('minify.html', function () {     
+
+    minifyHtml("app/**/*.html", global.paths.dist);
+});

@@ -3,4 +3,5 @@
  * @author Jon Vunk
  * @since 12/18/2015
  */
-angular.module('siteGlobals', ['ngMaterial', 'ngSanitize', 'ngRoute', 'ngMessages']);
+angular.module('siteGlobals', ['ngMaterial', 'ngSanitize', 'ngRoute', 'ngMessages',
+                               'header']);
